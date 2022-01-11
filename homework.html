@@ -58,7 +58,24 @@ crossorigin="anonymous"></script>
         }
 
 
+
+
     </style>
+    <script>
+        $(document).ready(function () {
+            alert('다 로딩됐다!')
+            $.ajax({
+                type: "GET",
+                url: "http://spartacodingclub.shop/sparta_api/weather/incheon",
+                data: {},
+                success: function (response) {
+                    $('#temp').text(response['temp'])
+                }
+            })
+        });
+
+
+    </script>
 </head>
 
 <body>
@@ -66,6 +83,7 @@ crossorigin="anonymous"></script>
 
  <div class="mytitle">
         <h1> 십센치(10cm) 팬명록</h1>
+        <p>현재기온 : <span id="temp">0.00도</span></p>
     </div>
 <div class="mypost">
     <div class="form-floating mb-3">
